@@ -8,8 +8,8 @@ import '../src/app/globals.css'
 
 export default function FooterPage() {
   return (
-    <main className='px-[4rem] mt-14 bg-yellow-50 h-[40%]'>
-    <div className='flex gap-[24rem] '>
+    <main className='px-[2rem] mt-14 h-[50%] bg-yellow-50 '>
+    <div className='flex gap-[24rem]  bg-yellow-50 '>
       <span>
 <p className='font-bold'>INFORMATION</p>
 <ul>
@@ -44,14 +44,14 @@ export default function FooterPage() {
       <span>
         <p className='font-bold'>SOCIAL MEDIA</p>
         <span className='flex gap-4'> 
-        <FaFacebookF className='h-10 w-10 text-white bg-blue-900 mt-8'/>
-        <FaPinterestP className='h-10 w-10 text-white  bg-red-700 mt-8' />
-                  <IoLogoTwitter className='h-10 w-10 text-white bg-blue-600 mt-8'/>
-                  <CiInstagram  className='h-10 w-10 text-white  bg-red-400 mt-8'/>
+        <FaFacebookF className='w-10 h-10 mt-8 text-white bg-blue-900'/>
+        <FaPinterestP className='w-10 h-10 mt-8 text-white bg-red-700' />
+                  <IoLogoTwitter className='w-10 h-10 mt-8 text-white bg-blue-600'/>
+                  <CiInstagram  className='w-10 h-10 mt-8 text-white bg-red-400'/>
                   </span>
                   <p className='mt-3'>Signup and get executive offers and coupon</p>
                   <p>codes</p>
-                  <button className='rounded-full h-10 w-32 text-white bg-yellow-500 mt-6'>SIGN UP</button>
+                  <button className='w-32 h-10 mt-6 text-white bg-yellow-500 rounded-full'>SIGN UP</button>
       </span>
     </div>
   </main>

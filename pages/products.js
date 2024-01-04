@@ -1,14 +1,17 @@
+
 import React, { useState } from "react";
 import Link from "next/link";
-import AdminLogin from "./AdminLogin";
-import AddPizzaForm from "./AddPizzaForm";
+//import AdminLogin from "./AdminLogin";
+//import AddPizzaForm from "./AddPizzaForm";
 import { useRouter } from "next/router";
+import Image from 'next/image';
+import { GoFilter } from "react-icons/go";
 
 export const pizzas = [
   {
     id: 1,
     name: "PepperoniI",
-    image: "/images/pizza.png",
+    image: "/images/bread.jpg",
     price: "$13.99",
     rating: 5,
     description: "Spicy Pepperoni pizza.",
@@ -24,7 +27,7 @@ export const pizzas = [
   {
     id: 3,
     name: "Vegetarian Delight",
-    image: "/images/pizza3.png",
+    image: "/images/bread1.png",
     price: "$12.99",
     rating: 4,
     description: " vegetarian pizzas.",
@@ -32,7 +35,7 @@ export const pizzas = [
   {
     id: 4,
     name: "Hawaiian Paradise",
-    image: "/images/pizza4.png",
+    image: "/images/pizza.png",
     price: "$14.99",
     rating: 4,
     description: " Hawaiian pizza.",
@@ -40,7 +43,7 @@ export const pizzas = [
   {
     id: 5,
     name: "Chicken Supreme",
-    image: "/images/bread.jpg",
+    image: "/images/bread1.png",
     price: "$15.99",
     rating: 4,
     description: "supreme taste .",
@@ -48,7 +51,7 @@ export const pizzas = [
   {
     id: 6,
     name: "BBQ Feast",
-    image: "/images/bread1.png",
+    image: "/images/pizza4.png",
     price: "$16.99",
     rating: 5,
     description: "Savor the rich flavors .",
@@ -112,7 +115,7 @@ const Products = () => {
     });
 
   return (
-    <div>
+    <div className="mt-[13rem] h-screen w-full px-[2rem]"> 
       {isProductsPage && (
         <AdminLogin
           onLogin={handleLogin}
@@ -120,34 +123,55 @@ const Products = () => {
           isAdminLoggedIn={isAdminLoggedIn}
         />
       )}
+       <div className='flex gap-[84rem] '>
+        <span className='flex bg-yellow-500 rounded-full h-7 w-[5rem] gap-1'>
+        <GoFilter  className='mt-1 ml-3 text-white'/>
+        <p className='mr-2 text-white'>Filter</p>
+        </span>
+        <span className='flex gap-8'>
+<p className='font-bold '>Showing all 9 results</p>
 
-      <div className="flex items-center mb-4"></div>
+<select class=" border border-3 form-select pr-[5rem]" id="Default sorting" name="Default sorting"> 
+            <option>Default sorting</option>
+            <option value="Pizza">Pizza</option>
+            <option value="Pizza">Pizza</option>
+            <option value="Pizza">Pizza</option>
+            <option value="Pizza">Pizza</option>
+            <option value="Pizza">Pizza</option>
+            <option value="Pizza">Pizza</option>
+           
+</select>
 
-      <button className="button mt-4" onClick={handleAddPizzaClick}>
+        </span>
+      </div>
+
+      {/* <div className="flex items-center mb-4"></div>
+
+      <button className="mt-4 button" onClick={handleAddPizzaClick}>
         Add New Pizza
-      </button>
+      </button> */}
 
-      <AddPizzaForm
+      {/* <AddPizzaForm
         showForm={showAddPizzaForm}
         onCloseFormClick={handleCloseFormClick}
-      />
+      /> */}
 
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-3 gap-4 mt-6">
         {filteredAndSortedPizzas.map((pizza) => (
-          <div key={pizza.id} className="border p-4 flex flex-col items-center">
+          <div key={pizza.id} className="flex flex-col items-center p-4 border">
             <Link href={`/product/${pizza.id}`} passHref>
-              <img
+            <img
                 src={pizza.image}
                 alt={pizza.name}
-                className="w-full h-40 object-contain mb-2"
+                className="w-50% h-40 object-contain mb-2"
               />
             </Link>
-            <p className="text-center mb-2">
+            <p className="mb-2 text-center">
               <b>{pizza.name}</b>{" "}
               <span style={{ color: "red" }}>{pizza.price}</span>
             </p>
             <div className="flex mb-2">
-              {[1, 2, 3, 4, 5].map((index) => (
+              {[1, 2, 3, 4, 5, 6, 7].map((index) => (
                 <span
                   key={index}
                   className={`cursor-pointer ${
@@ -163,16 +187,19 @@ const Products = () => {
                 </span>
               ))}
             </div>
-            <p className="text-center mb-2">{pizza.description}</p>
+            <p className="mb-2 text-center">{pizza.description}</p>
             <Link href={`/product/${pizza.id}`} passHref>
-              <button className="button">
-                <img
-                  src="/images/n.png"
-                  alt="Cart Icon"
-                  className="w-3 h-3 cursor-pointer"
-                />
-                ORDER NOW
-              </button>
+            <button className="flex h-10 bg-yellow-500 rounded-full w-[10rem]">
+<Image
+  src="/whitecart.png"
+  alt="Pizza"
+  className='w-12 h-12 '
+  width={100}
+   height={10}
+  priority
+ />
+  <p className="mt-2.5"> ORDER NOW</p>
+</button>
             </Link>
           </div>
         ))}
@@ -182,3 +209,4 @@ const Products = () => {
 };
 
 export default Products;
+

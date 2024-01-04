@@ -9,7 +9,7 @@ export default function NavbarPage() {
   return (
     
     <main className='flex h-[10%]'> 
-    <div className='flex px-[7rem] gap-32 sticky top-0 '>  
+    <div className='flex px-[2rem] gap-[10rem] fixed top-0 '>  
     <div >
                   <Image
                     src="/pizzon.png"
@@ -43,13 +43,13 @@ export default function NavbarPage() {
        </ul>
        </div>
        
-       <div className='flex mt-14 gap-4 '>
-       <h1 className='mt-1 w-5 h-5'><CiSearch /></h1>
+       <div className='flex gap-4 mt-14 '>
+       <h1 className='w-5 h-5 mt-1'><CiSearch /></h1>
        
        <Image
                     src="/cart.png"
                     alt="cart"
-                    className='h-5 w-5'
+                    className='w-5 h-5'
                     width={200}
                     height={100}
                     priority

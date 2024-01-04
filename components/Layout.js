@@ -6,7 +6,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Navbar />
-      <div className="mx-10">
+      <div className="">
         {children}
         <Footer />
       
@@ -16,3 +16,4 @@ const Layout = ({ children }) => {
 };
 
 export default Layout;
+

@@ -1,17 +1,17 @@
 import React from "react";
-import ProductsTable from "../components/ProductsTable";
-import OrdersTable from "../components/OrdersTable";
+import ProductTable from "../components/ProductTable";
+import OrderTable from "../components/OrderTable";
 
 const Dashboard = () => {
   return (
     <div className="flex">
       <div style={{ marginRight: "16px", margin: "auto" }}>
         <h2>Products Table</h2>
-        <ProductsTable />
+        <ProductTable />
       </div>
       <div style={{ marginLeft: "16px", margin: "auto" }}>
         <h2>Orders Table</h2>
-        <OrdersTable />
+        <OrderTable />
       </div>
     </div>
   );
