@@ -1,12 +1,9 @@
-import Navbar from "../components/Navbar";
+import React from 'react'
 
-const Blog = () => {
+export default function blog() {
   return (
-    <div>
-      <Navbar />
-      <h1>BlogPage</h1>
+    <div className='text-blue-500 text-[7rem]  mt-60 ml-[12rem] h-80'> 
+    <div>Welcome To Our Blog Page</div>
     </div>
-  );
-};
-
-export default Blog;
+  )
+}

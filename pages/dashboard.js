@@ -4,9 +4,9 @@ import OrderTable from "../components/OrderTable";
 
 const Dashboard = () => {
   return (
-    <div className="flex">
+    <div className="flex h-screen">
       <div style={{ marginRight: "16px", margin: "auto" }}>
-        <h2>Products Table</h2>
+        <h2 className="mt-[4rem] ml-4">Products Table</h2>
         <ProductTable />
       </div>
       <div style={{ marginLeft: "16px", margin: "auto" }}>

@@ -4,10 +4,10 @@ const ProductsTable = () => {
   const products = [
     {
       id: 1,
-      name: "Product 1",
-      price: 19.99,
+      name: "Pizza",
+      price: 20,
       quantity: 10,
-      category: "Electronics",
+      category: "pizza",
     },
    
   ];
@@ -32,11 +32,11 @@ const ProductsTable = () => {
       >
         <thead>
           <tr>
-            <th>Image</th>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Price</th>
-            <th>Action</th>
+            <th className="pr-6">Image</th>
+            <th className="pr-6">ID</th>
+            <th className="pr-6">Title</th>
+            <th className="pr-6">Price</th>
+            <th className="pr-6">Action</th>
           </tr>
         </thead>
         <tbody>
@@ -44,29 +44,26 @@ const ProductsTable = () => {
             <tr key={product.id}>
               <td style={{ border: "none" }}>
                 <img
-                  src="/path/to/your/image.jpg"
+                  src="/images/bread1.jpg"
                   style={{ width: "50px", height: "50px" }}
                 />
+                
               </td>
               <td style={{ border: "none" }}>{product.id}</td>
               <td style={{ border: "none", whiteSpace: "nowrap" }}>
                 {product.name}
               </td>
-              <td style={{ border: "none" }}>${product.price.toFixed(2)}</td>
+              <td className="mr-2" style={{ border: "none" }}>${product.price.toFixed(2)}</td>
               <td style={{ border: "none", whiteSpace: "nowrap" }}>
-                <button
+                <button className="mr-[0.5rem] bg-green-700 text-white ml-2"
                   onClick={() => handleEdit(product.id)}
-                  style={{
-                    marginRight: "8px",
-                    backgroundColor: "green",
-                    color: "white",
-                  }}
+                 
                 >
                   Edit
                 </button>
-                <button
+                <button className="text-white bg-red-500"
                   onClick={() => handleDelete(product.id)}
-                  style={{ backgroundColor: "red", color: "white" }}
+                  
                 >
                   Delete
                 </button>

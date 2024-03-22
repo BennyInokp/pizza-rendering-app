@@ -137,25 +137,25 @@ const Cart = () => {
   };
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center mt-60">
       <Script
         src="https://www.paypal.com/sdk/js?client-id=ARn5FhcUL1S4anTD9LCDfewEkA5p3c6e-9a3iNe_aDMCF6SZvBZfCr21zm4ntAi7aYXLVUqdNNiz7DwN"
         strategy="beforeInteractive"
       />
       <div className="flex-1">
-        <h1>Your Cart</h1>
+        <h1 className="px-6" >Your Cart</h1>
         {cart.length === 0 ? (
-          <p>Your cart is empty.</p>
+          <p className="px-6">Your cart is empty.</p>
         ) : (
           <table className="mx-auto">
             <thead>
               <tr>
-                <th className="table-header">Product Image</th>
-                <th className="table-header">Name</th>
-                <th className="table-header">Extra</th>
-                <th className="table-header">Price</th>
-                <th className="table-header">Quantity</th>
-                <th className="table-header">Total</th>
+                <th className="pr-6">Product Image</th>
+                <th className="pr-6">Name</th>
+                <th className="pr-6">Extra</th>
+                <th className="pr-6">Price</th>
+                <th className="pr-6">Quantity</th>
+                <th className="pr-6">Total</th>
               </tr>
             </thead>
             <tbody>
@@ -233,3 +233,6 @@ const Cart = () => {
 };
 
 export default Cart;
+
+
+

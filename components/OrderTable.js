@@ -1,18 +1,20 @@
+
 // OrdersTable.js
 import React from "react";
+import Link from 'next/link';
 
 const OrdersTable = () => {
-  // Assuming you have a list of orders
+  //  list of orders
   const orders = [
     // Sample order data
     {
       id: 1,
       product: "Product 1",
       quantity: 3,
-      customer: "John Doe",
+      customer: "Benny Akhils",
       total: 59.97,
     },
-    // Add more order data as needed
+    
   ];
 
   // Function to handle the next stage action
@@ -21,28 +23,28 @@ const OrdersTable = () => {
   };
 
   return (
-    <div style={{ textAlign: "center" }}>
+    <div className="mt-4" style={{ textAlign: "center" }}>
       <table
         style={{ borderCollapse: "collapse", width: "80%", padding: "16px" }}
       >
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Customer</th>
-            <th>Total</th>
-            <th>Payment</th>
-            <th>Status</th>
-            <th>Action</th>
+            <th className="pr-6">ID</th>
+            <th className="pr-6">Customer</th>
+            <th className="pr-6">Total</th>
+            <th className="pr-6">Payment</th>
+            <th className="pr-6">Status</th>
+            <th className="pr-6">Action</th>
           </tr>
         </thead>
         <tbody>
           {orders.map((order, index) => (
             <tr key={order.id}>
-              <td style={{ border: "none" }}>{order.id}</td>
-              <td style={{ border: "none" }}>{order.customer}</td>
-              <td style={{ border: "none" }}>${order.total.toFixed(2)}</td>
-              <td style={{ border: "none" }}>cash</td>
-              <td style={{ border: "none" }}>Pending</td>
+              <td>{order.id}</td>
+              <td>{order.customer}</td>
+              <td>${order.total.toFixed(2)}</td>
+              <td className="pr-6" >cash</td>
+              <td>Pending</td>
               <td
                 style={{
                   border: "none",
@@ -50,17 +52,13 @@ const OrdersTable = () => {
                     index < orders.length - 1 ? "1px solid #ddd" : "none",
                 }}
               >
-               
-                <button
+                <Link href="/Products">
+                <button className="w-20 pr-2 text-white bg-green-700 h-7"
                   onClick={() => handleNextStage(order.id)}
-                  style={{
-                    backgroundColor: "green",
-                    whiteSpace: "nowrap",
-                    color: "white",
-                  }}
-                >
-                  Next Stage
+                                  >
+                 Next Stage 
                 </button>
+                </Link>
               </td>
             </tr>
           ))}
@@ -70,4 +68,6 @@ const OrdersTable = () => {
   );
 };
 
-export default OrdersTable;
+export default OrdersTable
+
+

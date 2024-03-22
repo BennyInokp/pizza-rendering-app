@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
-import Link from "next/link";
 
-const AdminLogin = ({ onLogin, onLogout, isAdminLoggedIn }) => {
+const AdminLogin = ({ onSignin, onLogout, isAdminSignedIn }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
 
   const handleLogin = () => {
-    if (username === "admin" && password === "admin123") {
-      onLogin();
+    if (username === "admin" && password === "admin234") {
+      
       router.push("/dashboard");
     } else {
       alert("Invalid credentials. Please try again.");
@@ -17,30 +16,30 @@ const AdminLogin = ({ onLogin, onLogout, isAdminLoggedIn }) => {
   };
 
   return (
-    <div className="flex justify-end mb-2">
-      {isAdminLoggedIn ? (
+    <div className="flex items-center justify-center h-screen">
+      {isAdminSignedIn ? (
         <button onClick={onLogout} className="button">
           Logout
         </button>
       ) : (
-        <div className="flex items-center">
+        <div className="flex flex-col items-center">
+          <h1 className="text-[1.5rem]">Admin Dashboard </h1>
           <input
             type="text"
             placeholder="Username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            className="mr-2"
+            className="px-4 py-2 mb-2 border border-gray-300 rounded"
           />
           <input
             type="password"
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="mr-2"
+            className="px-4 py-2 mb-2 border border-gray-300 rounded"
           />
-          <Link href="/dashboard">Login</Link>
-          <button onClick={handleLogin} className="button">
-            Login
+          <button className="h-10 px-4 py-2 text-white bg-emerald-900 w-[13.5rem]" onClick={handleLogin}>
+            Sign in
           </button>
         </div>
       )}

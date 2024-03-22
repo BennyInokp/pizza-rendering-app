@@ -1,10 +1,8 @@
-import Navbar from "../components/Navbar";
-
 const Contact = () => {
+  
   return (
-    <div>
-      <Navbar />
-      <h1>Contact Page</h1>
+    <div className='text-blue-500 text-[7rem]  mt-60 ml-[12rem] h-80'> 
+    <div>It's Great Meeting You Today</div>
     </div>
   );
 };
